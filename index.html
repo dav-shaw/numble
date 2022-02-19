@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numble</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+
+</head>
+
+<body>
+    <h1>Numble</h1>
+    <h2>i'm thinking of a number between 1 and 100</h2>
+    <div class="form">
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="check" class="guessSubmit" id="submitguess">
+    </div>
+    <p id=message>
+
+    </p>
+    <script type="text/javascript">
+        // random value generated
+        var y = Math.floor(Math.random() * 100 + 1);
+
+        // counting the number of guesses
+        // made for correct Guess
+        var guess = 1;
+
+        document.getElementById("submitguess").onclick = function() {
+
+            // number guessed by user	
+            var x = document.getElementById("guessField").value;
+
+            if (x == y) {
+                document.getElementById("message").innerHTML = "you got it in " +
+                    guess + " guesses. nice ";
+            } else if (x > y)
+            /* if guessed number is greater
+                               than actual number*/
+            {
+                guess++;
+                document.getElementById("message").innerHTML = "maybe try a smaller number :)";
+            } else {
+                guess++;
+                document.getElementById("message").innerHTML = "maybe try a bigger number :)";
+            }
+        }
+    </script>
+    <p class=signoff>cool app by me <a href="http://twitter.com/gloomfather">dave</a>. i am open to selling this game to the new york times. </p>
+</body>
+
+</html>
